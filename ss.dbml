@@ -1,0 +1,20 @@
+Table cargo_ships {
+    id int pk
+    name varchar
+    haulerId int
+}
+
+Table hauler_ships {
+    id int pk
+    name varchar
+    dockId int
+}
+
+Table docks {
+    id int pk
+    location varchar
+    volume decimal
+}
+
+ref: hauler_ships.id > cargo_ships.haulerId
+ref: docks.id > hauler_ships.dockId
